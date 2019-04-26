@@ -4,39 +4,96 @@
 <head>
     <meta charset="UTF-8">
     <title>Get Ya Gifts</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <meta name = "viewport" content = "width = device-width, initial-scale = 1">    
+      <!--Boostrap  -->
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+      <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+      <!-- Materialize -->
+        <!-- <link rel = "stylesheet" href = "https://fonts.googleapis.com/icon?family=Material+Icons">
+        <link rel = "stylesheet" href = "https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.min.css">
+        <script type = "text/javascript" src = "https://code.jquery.com/jquery-2.1.1.min.js"></script>           
+        <script src = "https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script>  -->
 </head>
+   
 
 <body>
 
-    <h1>Get ya Gifts</h1>
+    <!-- Materlize Button -->
+    <!-- <body class = "container">  -->
+        <!-- the button -->
+        <!-- <ul id = "dropdown" class = "dropdown-content">
+            <li><a href = "#" class="dropdown-item" data-name="Valentine's Day">Valentine's Day</a></li>
+            <li><a href = "#" class="dropdown-item" data-name="Mother's Day">Mother's Day</a></li>
+            <li><a href = "#" class="dropdown-item" data-name="Father's Day">Father's Day</a></li>
+            <li><a href = "#" class="dropdown-item" data-name="Christmas Day">Christmas</a></li>
+            <li><a href = "#" class="dropdown-item" data-name="Chanukah/Hanukkah (first day)">Hanukkah</a></li>
+            <li class = "divider"></li>
+            <li><a href = "#" class="dropdown-item" data-name="other">Enter a birthday or anniversary</a></li>
+        </ul>
+        
+        <a class = "btn dropdown-button" href = "#" data-activates = "dropdown">When do you need your gift?
+            <i class = "mdi-navigation-arrow-drop-down right"></i></a>	  -->
 
-        <div class="btn-group">
+      
+
+    <!-- Bootstrap Button -->
+    <div class="btn-group">
             <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Action
+            When do you need your gift?
             </button>
             <div class="dropdown-menu">
-            <a class="dropdown-item" href="#" data-name="Valentine's Day">Valentine's Day</a>
-            <a class="dropdown-item" href="#" data-name="Mother's Day">Mother's Day</a>
-            <a class="dropdown-item" href="#" data-name="Father's Day">Father's Day</a>
-            <a class="dropdown-item" href="#" data-name="Christmas Day">Christmas</a>
-            <a class="dropdown-item" href="#" data-name="Chanukah/Hanukkah (first day)">Hanukkah</a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#" data-name="other">Enter a birthday or other date</a>
+                <a class="dropdown-item" href="#" data-name="Valentine's Day">Valentine's Day</a>
+                <a class="dropdown-item" href="#" data-name="Mother's Day">Mother's Day</a>
+                <a class="dropdown-item" href="#" data-name="Father's Day">Father's Day</a>
+                <a class="dropdown-item" href="#" data-name="Christmas Day">Christmas</a>
+                <a class="dropdown-item" href="#" data-name="Chanukah/Hanukkah (first day)">Hanukkah</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" id="other_event" href="#" data-name="other">Enter a birthday or other date</a>
             </div>
+    </div>
+
+    <form>
+        <div class="form-group">
+            <label for="exampleInputEmail1">Enter your custom date</label>
+            <input type="date" class="form-control" id="userProvidedDate" aria-describedby="emailHelp" placeholder="2019-06-01">
         </div>
+        <button type="submit" class="btn btn-primary" id="otherSubmit" min="2019-04-26">Submit</button>
+    </form>
+
+
+    <div id="daysRemaining"></div>
 
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <script type="text/javascript">
 
-
             $(document).ready(function () {
 
+                $("form").hide();
+
                 $(".dropdown-item").on("click", calendar);
+
+                $("#other_event").on("click", showForm);
+
+                $("#otherSubmit").on("click", customDate);
+
+                function showForm() {
+                    $("form").show();
+                };
+
+                function customDate() {
+
+                    var occasion_date = new Date($("#userProvidedDate").val())
+                    console.log(occasion_date);
+                    
+                    var today = new Date();
+                    var days_until = Math.round((occasion_date-today)/(1000*60*60*24));
+
+                    $("#daysRemaining").html("Days Remaining: " + days_until);
+
+                };
 
                 function calendar() {
 
@@ -67,13 +124,14 @@
                                     if (days_until < 0) {
                                         days_until = days_until + 365;
                                     }
-                                    
-                                    alert(days_until);
+
+                                    $("#daysRemaining").html("Days Remaining: " + days_until);
                                 }
 
                             };
 
                         });
+
                 };
 
             });
