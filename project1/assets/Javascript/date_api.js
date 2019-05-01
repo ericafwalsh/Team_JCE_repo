@@ -56,7 +56,7 @@ $(document).ready(function () {
                             days_until = days_until + 365;
                         }
 
-                        $("#daysRemaining").html("Days Remaining: " + days_until);
+                        $("#daysRemaining").html("You have " + days_until + " days left to buy your book!");
                     }
 
                 };
