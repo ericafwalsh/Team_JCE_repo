@@ -3,8 +3,11 @@
 }
 
 body {
-background-color: #117864;
-color: white;
+    background-color: #117864;
+    color: white;
+    background-image: url("../assets/leftSideBookBorder.png");
+    background-repeat: no-repeat;
+    background-size: 350px 800px;
 }
 
 .col {
@@ -15,3 +18,26 @@ color: white;
     text-align: center;
 }
 
+.header {
+    text-align: center;
+    /* padding: 4px; */
+    font-size: 24px;
+    font-family: 'Poppins', sans-serif;
+    vertical-align: middle;
+}
+
+.headerText {
+    margin: 5px;
+    font-style: italic;
+}
+
+.bookS {
+    font-weight: bold;
+    font-family: 'Poppins', sans-serif;
+    font-style: italic;
+
+}
+
+.btn {
+    margin-top: 10px;
+}
