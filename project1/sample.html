@@ -32,77 +32,84 @@
     <div class="container">
       <div class="row">
         <div class="input-field col s3">
-          <input id="age_group" type="text" class="validate">
-          <label for="age_group">Age Group</label>
-        </div>
-        <div class="input-field col s3">
-          <input id="price" type="text" class="validate">
-          <label for="price">Price</label>
-        </div>
-        <div class="input-field col s3">
-          <input id="email_address" type="text" class="validate">
-          <label for="email_address">Email Address</label>
+          <input id="Search" type="text" class="validate">
+          <label for="Search">Search</label>
         </div>
 
-        <!-- Submit Botton -->
-        <div class="col s3"></div>
+        <!-- number dropdown selector  -->
+        <div class="input-field col s3">
+            <select>
+              <option value="" selected>Choose your option</option>
+              <option value="1">1</option>
+              <option value="5">5</option>
+              <option value="10">10</option>
+            </select>
+            <label>Quantity</label>
+          </div>
+    
+        <!-- email w/validation -->
+        <div class="input-field col s3">
+        <input id="email" type="email" class="validate">
+        <label for="email">Email</label>
+      </div>
+
+      <!-- Submit Botton -->
+      <div class="col s3"></div>
       <button class="btn waves-effect waves-light" type="submit" name="action">Submit
         <i class="material-icons right"></i>
       </button>
 
-        <!-- Date Form! -->
-        <div class="input-field col s8">
+      <!-- Date Form! -->
+      <div class="input-field col s8">
+        <a class='dropdown-trigger btn' href='#' data-target='dropdown1'>When will you need your book?</a>
 
-            <a class='dropdown-trigger btn' href='#' data-target='dropdown1'>When will you need your book?</a>
-
-            <!-- Dropdown Structure -->
-            <ul id='dropdown1' class='dropdown-content'>
-              <li><a href="#" class="dropdown-item" data-name="Valentine's Day">Valentine's Day</a></li>
-              <li><a href="#" class="dropdown-item" data-name="Mother's Day">Mother's Day</a></li>
-              <li><a href="#" class="dropdown-item" data-name="Father's Day">Father's Day</a></li>
-              <li><a href="#" class="dropdown-item" data-name="Christmas Day">Christmas</a></li>
-              <li><a href="#" class="dropdown-item" data-name="Chanukah/Hanukkah (first day)">Hanukkah</a>
-              <li class="divider" tabindex="-1"></li>
-              <li><a href="#" class="dropdown-item" data-name="other" id="other_event">Enter a birthday or anniversary</a></li>
-            </ul>
-        </div>
-        
-        <!-- Custom date range -->
-        <div class="input-field col s4" id="customDateForm">
-
-            <form>
-                <div class="form-group">
-                    <label for="exampleInputEmail1">Enter your custom date</label>
-                    <input type="date" class="form-control" id="userProvidedDate" aria-describedby="emailHelp" placeholder="2019-06-01">
-                </div>
-                <button type="submit" class="btn btn-primary" id="otherSubmit" min="2019-04-26">Submit</button>
-            </form>
-
-        </div>
-
-
+        <!-- Dropdown Structure -->
+        <ul id='dropdown1' class='dropdown-content'>
+          <li><a href="#" class="dropdown-item" data-name="Valentine's Day">Valentine's Day</a></li>
+          <li><a href="#" class="dropdown-item" data-name="Mother's Day">Mother's Day</a></li>
+          <li><a href="#" class="dropdown-item" data-name="Father's Day">Father's Day</a></li>
+          <li><a href="#" class="dropdown-item" data-name="Christmas Day">Christmas</a></li>
+          <li><a href="#" class="dropdown-item" data-name="Chanukah/Hanukkah (first day)">Hanukkah</a>
+          <li class="divider" tabindex="-1"></li>
+          <li><a href="#" class="dropdown-item" data-name="other" id="other_event">Enter a birthday or anniversary</a>
+          </li>
+        </ul>
       </div>
 
-      <!-- Empty div to show days reminaing -->
-      <div id="daysRemaining"></div>
-      <!-- Book Selections -->
-      <div>
-        <div class="col s12">
-          <p class="z-depth-4 bookS">Book Selections</p>
-        </div>
-        <br>
-        <div class="col s12">
-          <!-- <img class="responsive-img" src="assets/principles.png">
+      <!-- Custom date range -->
+      <div class="input-field col s4" id="customDateForm">
+        <form>
+          <div class="form-group">
+            <label for="exampleInputEmail1">Enter your custom date</label>
+            <input type="date" class="form-control" id="userProvidedDate" aria-describedby="emailHelp"
+              placeholder="2019-06-01">
+          </div>
+          <button type="submit" class="btn btn-primary" id="otherSubmit" min="2019-04-26">Submit</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Empty div to show days reminaing -->
+    <div id="daysRemaining"></div>
+    
+    <!-- Book Selections -->
+    <div>
+      <div class="col s12">
+        <p class="z-depth-4 bookS">Book Selections</p>
+      </div>
+      <br>
+      <div class="col s12">
+        <!-- <img class="responsive-img" src="assets/principles.png">
           <img class="responsive-img" src="assets/theTattooistOfAuschwitz.jpeg">
           <img class="responsive-img" src="assets/whereTheCrawdadsSing.jpeg">
           <img class="responsive-img" src="assets/theCityInTheMiddleOfTheNight.jpeg">
           <img class="responsive-img" src="assets/atTheMountainsEdge.jpeg"> -->
-        </div>
       </div>
+    </div>
 
     <!-- Compiled and minified JavaScript -->
     <script src="https://code.jquery.com/jquery-3.4.0.min.js"
-    integrity="sha256-BJeo0qm959uMBGb65z40ejJYGSgR7REI4+CW1fNKwOg=" crossorigin="anonymous"></script>
+      integrity="sha256-BJeo0qm959uMBGb65z40ejJYGSgR7REI4+CW1fNKwOg=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src="assets/Javascript/books.js"></script>
     <script src="assets/Javascript/date_api.js"></script>
