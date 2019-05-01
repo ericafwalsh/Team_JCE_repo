@@ -9,10 +9,7 @@
   <!-- My CSS -->
   <link rel="stylesheet" href="assets/style.css">
 
-  <!-- Compiled and minified JavaScript -->
-  <script src="https://code.jquery.com/jquery-3.4.0.min.js"
-    integrity="sha256-BJeo0qm959uMBGb65z40ejJYGSgR7REI4+CW1fNKwOg=" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
   <!--Let browser know website is optimized for mobile-->
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 </head>
@@ -66,10 +63,6 @@
               <li><a href="#" class="dropdown-item" data-name="other" id="other_event">Enter a birthday or anniversary</a></li>
             </ul>
         </div>
-
-
-
-
         
         <!-- Custom date range -->
         <div class="input-field col s4" id="customDateForm">
@@ -104,77 +97,11 @@
         </div>
       </div>
 
-      <!-- JS for Date Selector -->
-      <script type="text/javascript">
-        $(document).ready(function () {
-           // initializing materializing
-           $('.dropdown-trigger').dropdown();
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://code.jquery.com/jquery-3.4.0.min.js"
+    integrity="sha256-BJeo0qm959uMBGb65z40ejJYGSgR7REI4+CW1fNKwOg=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="assets/Javascript/books.js"></script>
+    <script src="assets/Javascript/date_api.js"></script>
 
-$("#customDateForm").hide();
-
-$(".dropdown-item").on("click", calendar);
-
-$("#other_event").on("click", showForm);
-
-$("#otherSubmit").on("click", customDate);
-
-function showForm() {
-  $("#customDateForm").show();
-};
-
-function customDate() {
-
-  var occasion_date = new Date($("#userProvidedDate").val());
-  console.log(occasion_date);
-
-  var today = new Date();
-  var days_until = Math.round((occasion_date - today) / (1000 * 60 * 60 * 24));
-
-  $("#daysRemaining").html("Days Remaining: " + days_until);
-
-};
-
-function calendar() {
-
-  var holidayName = $(this).attr("data-name");
-
-  var apiKey = "c65ffe3f62969801df573185b16ae4961aa65370";
-  var queryURL = "https://calendarific.com/api/v2/holidays?country=US&year=2019&api_key=" + apiKey;
-
-  $.ajax({
-    url: queryURL,
-    method: "GET"
-  })
-    .then(function (response) {
-
-      var results = response.response.holidays;
-
-      for (var i = 0; i < results.length; i++) {
-
-        if (results[i].name === holidayName) {
-
-          var date = results[i].date.iso;
-
-          var today = new Date();
-          var occasion_date = new Date(date);
-
-          var days_until = Math.round((occasion_date - today) / (1000 * 60 * 60 * 24));
-
-          if (days_until < 0) {
-            days_until = days_until + 365;
-          }
-
-          $("#daysRemaining").html("Days Remaining: " + days_until);
-        }
-
-      };
-
-    });
-
-};
-        });
-
-// Days Left!
-          
-      </script>
 </body>
