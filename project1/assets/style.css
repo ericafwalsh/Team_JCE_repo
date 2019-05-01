@@ -6,7 +6,7 @@ body {
     background-color: #117864;
     color: white;
     background-image: url("../assets/leftSideBookBorder.png");
-    background-repeat: no-repeat;
+    background-repeat: repeat-y;
     background-size: 350px 800px;
 }
 

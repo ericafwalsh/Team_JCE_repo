@@ -11,6 +11,7 @@
         var numBooks = $("#numBooks").val();
         var queryURL = "https://www.googleapis.com/books/v1/volumes?key=AIzaSyBYAAeWiq1UQDdVcU2C2QGQnkgb5B2QMvA&q=" + keyword;
 
+        console.log(keyword)
         console.log(numBooks)
         //this is the query url
 
@@ -22,6 +23,8 @@
 
             //within ajax call get response
             .then(function (response) {
+
+                console.log(response);
 
                 // for loop to append book info
                 for (var i = 0; i < numBooks; i++) {
@@ -35,15 +38,15 @@
                     console.log(description);
 
                     var bookSection = $("<div>");
-                    bookSection.addClass("media bg-light border");
+                    bookSection.addClass("card-panel grey darken-1");
                     bookSection.addClass("cardName_" + [i]);
                     $('#mediaSection').append(bookSection);
 
                     var smallCard = $("<div>");
-                    smallCard.addClass("media-body");
+                    smallCard.addClass("card-content white-text");
                     $(".cardName_" + [i]).append(smallCard);
 
-                    $(".cardName_" + [i]).append("<h4>" + booktitle + "</h4>");
+                    $(".cardName_" + [i]).append("<h4 text>" + booktitle + "</h4>");
                     $(".cardName_" + [i]).append("<h5>" + author + "</h5>");
                     $(".cardName_" + [i]).append("<p>" + description + "</p>");
 
