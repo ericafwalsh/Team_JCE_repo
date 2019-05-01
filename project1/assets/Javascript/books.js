@@ -1,6 +1,5 @@
-
-$(document).ready(function () {
-    
+ $(document).ready(function () {
+    console.log("ready");
     $('select').formSelect();
 
     $("#search-button").on("click", function (event) {
@@ -8,11 +7,11 @@ $(document).ready(function () {
         event.preventDefault();
 
         // This line grabs the input from the textbox
-        var keyword = $("#searchTerm").val().trim();
+        var keyword = $("#search").val().trim();
         var numBooks = $("#numBooks").val();
         var queryURL = "https://www.googleapis.com/books/v1/volumes?key=AIzaSyBYAAeWiq1UQDdVcU2C2QGQnkgb5B2QMvA&q=" + keyword;
 
-
+        console.log(numBooks)
         //this is the query url
 
         //performing Ajax get call
@@ -53,5 +52,4 @@ $(document).ready(function () {
             });
 
     });
-
 });
