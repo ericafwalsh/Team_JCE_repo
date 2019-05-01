@@ -22,7 +22,7 @@ $(document).ready(function () {
         var today = new Date();
         var days_until = Math.round((occasion_date - today) / (1000 * 60 * 60 * 24));
 
-        $("#daysRemaining").html("Days Remaining: " + days_until);
+        $("#daysRemaining").html("You have " + days_until + " days left to buy your book!");
 
     };
 
