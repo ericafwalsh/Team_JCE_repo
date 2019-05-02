@@ -27,10 +27,11 @@
   <div>
     <div class="col s1"></div>
     <div class="col s10 z-depth-4 header" id="header">
-      <p class="headerText"><b>Book 'em</b></p>
+      <p class="headerText"><b>Book 'Em</b></p>
     </div>
   </div>
 </header>
+
 
 <!-- Form! -->
 
@@ -38,9 +39,17 @@
   <div class="col s12">
     <div class="container">
       <div class="row">
+
+
+        <!-- Step 1 -->
+          <div class="input-field col s2">
+            <h4>Step 1: </h4>
+            </div>
+
+
         <div class="input-field col s3">
           <input id="search" type="text" class="validate">
-          <label for="Search">Search</label>
+          <label for="Search">Recipient's Favorite Topic or Interest</label>
         </div>
 
         <!-- number dropdown selector  -->
@@ -50,13 +59,13 @@
             <option value="5" selected>5</option>
             <option value="10">10</option>
           </select>
-          <label>Quantity</label>
+          <label>How Many Books Should We Suggest?</label>
         </div>
 
         <!-- email w/validation -->
         <div class="input-field col s3">
           <input id="email" type="email" class="validate">
-          <label for="email">Email</label>
+          <label for="email">Please Enter Your Email</label>
         </div>
 
         <!-- Submit Botton -->
@@ -65,8 +74,13 @@
           <i class="material-icons right"></i>
         </button>
 
+        <!-- Step 1 -->
+        <div class="input-field col s2">
+            <h4>Step 2: </h4>
+            </div>
+
         <!-- Date Form! -->
-        <div class="input-field col s8">
+        <div class="input-field col s3">
           <a class='dropdown-trigger btn' href='#' data-target='dropdown1'>When will you need your book?</a>
 
           <!-- Dropdown Structure -->
