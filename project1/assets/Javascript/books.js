@@ -32,20 +32,27 @@
                     var booktitle = response.items[i].volumeInfo.title;
                     var author = response.items[i].volumeInfo.authors[0];
                     var description = response.items[i].volumeInfo.description;
+                    var img = response.items[i].volumeInfo.imageLinks.thumbnail
 
+                    console.log(img);
                     console.log(booktitle);
                     console.log(author);
                     console.log(description);
 
                     var bookSection = $("<div>");
-                    bookSection.addClass("card-panel grey darken-1");
+                    bookSection.addClass("card-panel light-blue");
                     bookSection.addClass("cardName_" + [i]);
                     $('#mediaSection').append(bookSection);
+
+                    var imgSection = $("<img>");
+                    imgSection.addClass("left");
+                    $("cardName_" + [i]).append(smallCard);
 
                     var smallCard = $("<div>");
                     smallCard.addClass("card-content white-text");
                     $(".cardName_" + [i]).append(smallCard);
 
+                    $(".cardName_" + [i]).append("<img src=" + img  + ">");
                     $(".cardName_" + [i]).append("<h4 text>" + booktitle + "</h4>");
                     $(".cardName_" + [i]).append("<h5>" + author + "</h5>");
                     $(".cardName_" + [i]).append("<p>" + description + "</p>");
