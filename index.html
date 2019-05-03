@@ -19,8 +19,8 @@
   <!--uncompressed JQuery-->
   <script src="https://code.jquery.com/jquery-3.4.0.js" integrity="sha256-DYZMCC8HTC+QDr5QNaIcfR7VSPtcISykd+6eSmBW5qo="
     crossorigin="anonymous"></script>
-  
-    <!--JavaScript-->  
+
+  <!--JavaScript-->
   <script src="assets/Javascript/books.js"></script>
   <script src="assets/Javascript/date_api.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
@@ -47,14 +47,14 @@
 
 
         <!-- Step 1 -->
-          <div class="input-field col s2">
-            <h4>Step 1: </h4>
-            </div>
+        <div class="input-field col s1">
+          <h6>Step 1: </h6>
+        </div>
 
 
         <div class="input-field col s3">
           <input id="search" type="text" class="validate">
-          <label for="Search">Recipient's Favorite Topic or Interest</label>
+          <label for="Search">Favorite Topic/Interest</label>
         </div>
 
         <!-- number dropdown selector  -->
@@ -64,29 +64,31 @@
             <option value="5" selected>5</option>
             <option value="10">10</option>
           </select>
-          <label>How Many Books Should We Suggest?</label>
+          <label>How Many Books?</label>
         </div>
 
         <!-- email w/validation -->
         <div class="input-field col s3">
           <input id="email" type="email" class="validate">
-          <label for="email">Please Enter Your Email</label>
+          <label for="email">Your Email</label>
         </div>
 
         <!-- Submit Botton -->
-        <div class="col s3"></div>
+        <div class="col s2"></div>
         <button class="btn waves-effect waves-light" type="submit" id="search-button" name="action">Submit
           <i class="material-icons right"></i>
         </button>
 
-        <!-- Step 1 -->
-        <div class="input-field col s2">
-            <h4>Step 2: </h4>
-            </div>
+      </div>
+      <!-- Step 2 -->
+      <div class="row">
+        <div class="input-field col s1">
+          <h6>Step 2: </h6>
+        </div>
 
         <!-- Date Form! -->
-        <div class="input-field col s3">
-          <a class='dropdown-trigger btn' href='#' data-target='dropdown1'>When will you need your book?</a>
+        <div class="input-field col s6">
+          <a class='dropdown-trigger btn' href='#' data-target='dropdown1'>Gift Occasion?</a>
 
           <!-- Dropdown Structure -->
           <ul id='dropdown1' class='dropdown-content'>
@@ -102,7 +104,7 @@
         </div>
 
         <!-- Custom date range -->
-        <div class="input-field col s4" id="customDateForm">
+        <div class="input-field col s5" id="customDateForm">
           <form>
             <div class="form-group">
               <label for="exampleInputEmail1">Enter your custom date</label>
@@ -113,18 +115,21 @@
           </form>
         </div>
       </div>
+    </div>
+    <!-- Empty div to show days reminaing -->
+    <div id="daysRemaining"></div>
 
-      <!-- Empty div to show days reminaing -->
-      <div id="daysRemaining"></div>
-
-      <!-- Book Selections -->
-      <div>
-        <div class="col s12">
-          <p class="z-depth-4">Book Selections</p>
-        </div>
-        <br>
-        <div class="col s12" id="mediaSection">
-
-        </div>
+    <!-- Book Selections -->
+    <div class="col s1"></div>
+    <div>
+      <div class="col s10">
+        <p class="z-depth-4">Book Selections</p>
       </div>
+      <div class="col s1"></div>
+    
+      <br>
+      <div class="col s12" id="mediaSection">
+
+      </div>
+    </div>
 </body>
