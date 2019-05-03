@@ -1,67 +1,80 @@
 $(document).ready(function () {
-    // initializing materializing
-    $('.dropdown-trigger').dropdown();
+
+    $('select').formSelect();
 
     $("#customDateForm").hide();
 
-    $(".dropdown-item").on("click", calendar);
+    var holidayName;
+    var occasion_date;
 
-    $("#other_event").on("click", showForm);
 
-    $("#otherSubmit").on("click", customDate);
+    $('.holidays').on('change', function () {
 
-    function showForm() {
-        $("#customDateForm").show();
-    };
+        holidayName = $(".holidays option:selected").val();
 
-    function customDate() {
+        if (holidayName === "other") {
 
-        var occasion_date = new Date($("#userProvidedDate").val());
-        console.log(occasion_date);
+            $("#customDateForm").show();
 
-        var today = new Date();
-        var days_until = Math.round((occasion_date - today) / (1000 * 60 * 60 * 24));
+            $('#customDateForm').on('change', function () {
 
-        $("#daysRemaining").html("You have " + days_until + " days left to buy your book!");
+                occasion_date = new Date($("#userProvidedDate").val());
 
-    };
+            });
+
+        }
+    });
+
+
+    $("#search-button").on("click", calendar);
+
 
     function calendar() {
 
-        var holidayName = $(this).attr("data-name");
+        if (holidayName === "other") {
 
-        var apiKey = "c65ffe3f62969801df573185b16ae4961aa65370";
-        var queryURL = "https://calendarific.com/api/v2/holidays?country=US&year=2019&api_key=" + apiKey;
+            var today = new Date();
+            var days_until = Math.round((occasion_date - today) / (1000 * 60 * 60 * 24));
 
-        $.ajax({
-            url: queryURL,
-            method: "GET"
-        })
-            .then(function (response) {
+            $("#daysRemaining").html("You have " + days_until + " days left to buy your book!");
+        }
 
-                var results = response.response.holidays;
+        else {
 
-                for (var i = 0; i < results.length; i++) {
+            var apiKey = "c65ffe3f62969801df573185b16ae4961aa65370";
+            var queryURL = "https://calendarific.com/api/v2/holidays?country=US&year=2019&api_key=" + apiKey;
 
-                    if (results[i].name === holidayName) {
+            $.ajax({
+                url: queryURL,
+                method: "GET"
+            })
+                .then(function (response) {
 
-                        var date = results[i].date.iso;
+                    var results = response.response.holidays;
 
-                        var today = new Date();
-                        var occasion_date = new Date(date);
+                    for (var i = 0; i < results.length; i++) {
 
-                        var days_until = Math.round((occasion_date - today) / (1000 * 60 * 60 * 24));
+                        if (results[i].name === holidayName) {
 
-                        if (days_until < 0) {
-                            days_until = days_until + 365;
+                            var date = results[i].date.iso;
+
+                            var today = new Date();
+                            var occasion_date = new Date(date);
+
+                            var days_until = Math.round((occasion_date - today) / (1000 * 60 * 60 * 24));
+
+                            if (days_until < 0) {
+                                days_until = days_until + 365;
+                            }
+
+                            $("#daysRemaining").html("You have " + days_until + " days left to buy your book!");
                         }
 
-                        $("#daysRemaining").html("You have " + days_until + " days left to buy your book!");
-                    }
+                    };
 
-                };
+                });
 
-            });
+        };
 
     };
 });
