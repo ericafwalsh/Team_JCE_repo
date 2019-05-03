@@ -1,34 +1,45 @@
 $(document).ready(function () {
-    // initializing materializing
-    $('.dropdown-trigger').dropdown();
+
+    $('select').formSelect();
 
     $("#customDateForm").hide();
 
-    $(".dropdown-item").on("click", calendar);
+    var holidayName;
+    var occasion_date;
+    
 
-    $("#other_event").on("click", showForm);
+    $('.holidays').on('change',function(){
 
-    $("#otherSubmit").on("click", customDate);
+        holidayName = $(".holidays option:selected").val();
 
-    function showForm() {
-        $("#customDateForm").show();
-    };
+        if (holidayName === "other") {
 
-    function customDate() {
+            $("#customDateForm").show();
 
-        var occasion_date = new Date($("#userProvidedDate").val());
-        console.log(occasion_date);
+            $('#customDateForm').on('change',function(){
 
-        var today = new Date();
-        var days_until = Math.round((occasion_date - today) / (1000 * 60 * 60 * 24));
+                occasion_date = new Date($("#userProvidedDate").val());
+        
+            });
+            
+        } 
+    });
 
-        $("#daysRemaining").html("You have " + days_until + " days left to buy your book!");
+    
+    $("#search-button").on("click", calendar);
 
-    };
 
     function calendar() {
 
-        var holidayName = $(this).attr("data-name");
+        if (holidayName === "other") {
+
+            var today = new Date();
+            var days_until = Math.round((occasion_date - today) / (1000 * 60 * 60 * 24));
+    
+            $("#daysRemaining").html("You have " + days_until + " days left to buy your book!");
+        }
+
+        else {
 
         var apiKey = "c65ffe3f62969801df573185b16ae4961aa65370";
         var queryURL = "https://calendarific.com/api/v2/holidays?country=US&year=2019&api_key=" + apiKey;
@@ -64,4 +75,6 @@ $(document).ready(function () {
             });
 
     };
+
+};
 });
