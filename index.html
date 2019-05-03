@@ -39,26 +39,20 @@
 
 
 <!-- Form! -->
-
 <body class="row wrapper">
   <div class="col s12">
     <div class="container">
       <div class="row">
 
 
-        <!-- Step 1 -->
-        <div class="input-field col s1">
-          <h6>Step 1: </h6>
-        </div>
 
-
-        <div class="input-field col s3">
+        <div class="input-field col s4">
           <input id="search" type="text" class="validate">
           <label for="Search">Favorite Topic/Interest</label>
         </div>
 
         <!-- number dropdown selector  -->
-        <div class="input-field col s3">
+        <div class="input-field col s4">
           <select id="numBooks">
             <option value="1">1</option>
             <option value="5" selected>5</option>
@@ -68,39 +62,29 @@
         </div>
 
         <!-- email w/validation -->
-        <div class="input-field col s3">
+        <div class="input-field col s4">
           <input id="email" type="email" class="validate">
           <label for="email">Your Email</label>
         </div>
 
-        <!-- Submit Botton -->
-        <div class="col s2"></div>
-        <button class="btn waves-effect waves-light" type="submit" id="search-button" name="action">Submit
-          <i class="material-icons right"></i>
-        </button>
-
       </div>
       <!-- Step 2 -->
       <div class="row">
-        <div class="input-field col s1">
-          <h6>Step 2: </h6>
-        </div>
-
-        <!-- Date Form! -->
         <div class="input-field col s6">
-          <a class='dropdown-trigger btn' href='#' data-target='dropdown1'>Gift Occasion?</a>
-
-          <!-- Dropdown Structure -->
-          <ul id='dropdown1' class='dropdown-content'>
-            <li><a href="#" class="dropdown-item" data-name="Valentine's Day">Valentine's Day</a></li>
-            <li><a href="#" class="dropdown-item" data-name="Mother's Day">Mother's Day</a></li>
-            <li><a href="#" class="dropdown-item" data-name="Father's Day">Father's Day</a></li>
-            <li><a href="#" class="dropdown-item" data-name="Christmas Day">Christmas</a></li>
-            <li><a href="#" class="dropdown-item" data-name="Chanukah/Hanukkah (first day)">Hanukkah</a>
-            <li class="divider" tabindex="-1"></li>
-            <li><a href="#" class="dropdown-item" data-name="other" id="other_event">Enter a birthday or anniversary</a>
-            </li>
-          </ul>
+          <select class="holidays">
+            <optgroup label="Holiday"></optgroup>
+            <option value=""></option>
+            <option value="Valentine's Day">Valentine's Day</option>
+            <option value="Mother's Day">Mother's Day</option>
+            <option value="Father's Day">Father's Day</option>
+            <option value="Christmas Day">Christmas Day</option>
+            <option value="Chanukah/Hanukkah (first day)">Hanukkah</option>
+            </optgroup>
+            <optgroup label="Custom Date">
+              <option value="other" id="other_event">Enter a birthday or anniversary</option>
+            </optgroup>
+          </select>
+          <label>Holiday or Custom Date</label>
         </div>
 
         <!-- Custom date range -->
@@ -111,7 +95,6 @@
               <input type="date" class="form-control" id="userProvidedDate" aria-describedby="emailHelp"
                 placeholder="2019-06-01">
             </div>
-            <button type="submit" class="btn btn-primary" id="otherSubmit" min="2019-04-26">Submit</button>
           </form>
         </div>
       </div>
@@ -119,14 +102,21 @@
     <!-- Empty div to show days reminaing -->
     <div id="daysRemaining"></div>
 
+     <!-- Submit Botton -->
+     <div class="col s12"></div>
+     <button class="btn waves-effect waves-light" type="submit" id="search-button" name="action">Submit
+       <i class="material-icons right"></i>
+     </button>
+
     <!-- Book Selections -->
+    <div class="row">
     <div class="col s1"></div>
     <div>
       <div class="col s10">
         <p class="z-depth-4">Book Selections</p>
       </div>
       <div class="col s1"></div>
-    
+    </div>
       <br>
       <div class="col s12" id="mediaSection">
 
